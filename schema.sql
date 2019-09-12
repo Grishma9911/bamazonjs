@@ -43,4 +43,4 @@ VALUES ("flowers", "nature", 15, 50);
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("phone", "electronics", 1000, 20);
 
-select from * products 
+select * from  products 

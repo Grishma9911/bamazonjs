@@ -21,7 +21,7 @@ connection.connect(function(err) {
   if (err){
     console.log("connected as id " + connection.threadId);
   }
- 
+  gotIt();
   afterConnection();
 });
 
@@ -31,10 +31,12 @@ function afterConnection() {
 
     if (err) throw err;
     console.table(res);
+   })
+  }
+  function gotIt(){
 
-
-inquirer.prompt([
-  {
+    inquirer.prompt([
+      {
     name: "id",
     message: "Id of the product: ",
     type: "input"
@@ -44,13 +46,28 @@ inquirer.prompt([
     type: "input"
   }
 ]).then(function(answers) {
-  console.log(answers);
-  connection.query("SELECT stock_quantity FROM products where ?", { item_id: answers.id}, function(err, res) {
-    console.log(res)
-    if(res <= answers.number){
-      console.log("sold!!!")
+  var query = "SELECT item_id, stock_quantity FROM products WHERE=?";
+  connection.query(query, {item_id: answers.id }, function(err, res, fields) {
+    if (err) throw err;
+    for (var i = 0; i < res.length; i++) {
+      if(res <= (answers.parseFloat(number))) {
+        console.log("Your order" + answers.id + answers.product_name + "has been placed!!!")
+      }else{
+        console.log("Insuficient quantity!!!!")
+      }
     }
-  })
+    connection.end();
+  });
+});
+  }
+  ////////////
+  // console.log(answers);
+  // connection.query("SELECT stock_quantity FROM products where ?", { item_id: answers.id}, function(err, res) {
+  //   console.log(res)
+  //   if(res <= answers.number){
+  //     console.log("sold!!!")
+  //   }
+  // })
   // console.log(answers)
   // initializes the variable newProgrammer to be a programmer object which will take
   // in all of the user's answers to the questions above
@@ -75,10 +92,9 @@ inquirer.prompt([
   //       console.log(newProducts);
   //     };
   //   };
-});
-    connection.end();
-  });
-}
+
+    // connection.end();
+
 ////////////////
 
 // qus & ans:
