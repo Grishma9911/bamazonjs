@@ -24,7 +24,7 @@ connection.connect(function(err) {
 //   createProduct();
   runSearch();
 });
-/////////////////////////////////
+
 function runSearch() {
     inquirer
       .prompt({
@@ -169,49 +169,4 @@ function lowInventory() {
           }
         );
       }
-////////////////////////////////
-// function afterConnection() {
-//   connection.query("SELECT * FROM products", function(err, res) {
-//     if (err) throw err;
-//     console.table(res);
-//     connection.end();
-//   });
-// }
-
-// inquirer.prompt([
-//   {
-//     name: "product",
-//     message: "View Products for sale: ",
-//     type: "input"
-//   }, {
-//     name: "inventory",
-//     message: "View Low Inventory: ",
-//     type: "input"
-//   }, {
-//     name: "add inventory",
-//     message: "Add to Inventory: ",
-//     type: "input"
-//   }, {
-//     name: "inventory",
-//     message: "Add New Product: ",
-//     type: "input"
-//   }
-// ]).then(function(answers) {
-//     var newProducts = new Products(answers.item_id, answers.department_name,answers.product_name, answers.price, answers.stock_quantity);
-
-//     function product(item_id, product_name, price, stock_quantity){
-//         this.item_id = item_id;
-//         this.product_name = product_name;
-//         this.price = price;
-//         this.stock_quantity = stock_quantity;
-
-//         this.readProfile = function(){
-//             if(newProducts === true){
-//                 // console.log(this)
-//                 this.push(new product(item_id, product_name, price, stock_quantity));
-//             }
-//         }
-//     }
-//       });
-//       module.exports = product;   
-
+// need to change some code in Add Inventory.
