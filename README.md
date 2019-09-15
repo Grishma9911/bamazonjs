@@ -67,8 +67,8 @@ Make sure you save and require the MySQL and Inquirer npm packages in your files
   * If a manager selects `Add New Product`, it will allow the manager to add a completely new product to the store.
 
 - - -
-//////////////////////////////////////////////////////
-### Challenge #3: Supervisor View (Final Level)
+
+### #3: Supervisor View: 
 
 1. Create a new MySQL table called `departments`. Your table should include the following columns:
 
@@ -99,8 +99,10 @@ Make sure you save and require the MySQL and Inquirer npm packages in your files
 
 6. If you can't get the table to display properly after a few hours, then feel free to go back and just add `total_profit` to the `departments` table.
 
-   * Hint: You may need to look into aliases in MySQL.
+   * You may need to look into aliases in MySQL.
 
-   * Hint: You may need to look into GROUP BYs.
+   * You may need to look into GROUP BYs.
 
-   * Hint: You may need to look into JOINS.
+   * You may need to look into JOINS.
+
+* link to video: https://drive.google.com/file/d/1mKJwDfBEGFDXK9chkTCpYrfreQjw6Xsy/view
